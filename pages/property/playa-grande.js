@@ -1,0 +1,9 @@
+import PageLayout from "../../components/PageLayout/PageLayout";
+
+export default function Property() {
+  return (
+    <PageLayout title='Playa Grande'>
+      <h1>Playa Grande</h1>
+    </PageLayout>
+  )
+}
