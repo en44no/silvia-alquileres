@@ -7,9 +7,9 @@ const PageLayoutHeader = (props) => {
   return (
     <>
       <Flex align="center" w='100%'>
-        <Divider bg='#394e6a' />
+        <Divider bg='#dee5f0' h='0.07rem' />
         <Text padding='3' textAlign='center' minW='fit-content' fontSize='3xl' fontWeight='bold'>{title}</Text>
-        <Divider bg='#394e6a' />
+        <Divider bg='#dee5f0' h='0.07rem' />
       </Flex>
     </>
   );

@@ -56,3 +56,8 @@ a {
   width: 80% !important;
   height: 32rem !important;
 }
+
+.carousel .control-dots {
+  display: flex !important;
+  justify-content: center !important;
+}

@@ -22,8 +22,25 @@ const Links = () => {
           }}
           fontWeight="semibold"
         >
+          <Link href='/'>INICIO</Link>
+        </Box>
+
+        <Box
+          as="li"
+          listStyleType='none'
+          mr="1rem"
+          _hover={{
+            transition: 'transform .2s',
+            transform: 'scale(1.06)',
+            color: '#3281ce',
+            cursor: 'pointer',
+            textDecoration: 'none'
+          }}
+          fontWeight="semibold"
+        >
           <Link href='/contact'>CONTACTO</Link>
         </Box>
+
         <Box
           as="li"
           listStyleType='none'

@@ -19,8 +19,8 @@ const Navbar = () => {
         display={{
           sm: "none",
           md: "none",
-          lg: "block",
-          xl: "block"
+          lg: "contents",
+          xl: "contents"
         }}
       >
         <Container maxW="container.xl">

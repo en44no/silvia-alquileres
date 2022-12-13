@@ -1,12 +1,18 @@
 import React from 'react';
-import { Container, Box } from '@chakra-ui/react';
+import { Container, Box, Text, Button } from '@chakra-ui/react';
 import Head from 'next/head';
 import PageLayoutSubtitle from './PageLayoutSubtitle';
 import PageLayoutHeader from './PageLayoutHeader';
 import PageLayoutNextButton from './PageLayoutNextButton';
 import Navbar from '../Navbar/Navbar';
+import { FaAngleLeft } from 'react-icons/fa';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 const PageLayout = (props) => {
+
+  const router = useRouter()
+
   const {
     id,
     title,
@@ -14,7 +20,9 @@ const PageLayout = (props) => {
     sectionNextButton,
     children,
     sectionHome,
-    marginBottomInTitle
+    marginBottomInTitle,
+    showGoBack = false,
+    centerChildren = true
   } = props;
 
   return (
@@ -25,7 +33,6 @@ const PageLayout = (props) => {
         <link rel='icon' href='/favicon.ico'></link>
       </Head>
 
-      <Navbar />
 
       <Container
         as="section"
@@ -39,14 +46,21 @@ const PageLayout = (props) => {
         display="flex"
         flexDirection="column"
       >
+        <Navbar />
+
+        {showGoBack && (
+          <Button onClick={() => router.push(`/`)} border='1px solid' bg='#f0f6ff' _hover={{ 'bg': '#394e6a', 'color': '#fff' }} borderRadius='10px' display='flex' alignItems='center' gap='0.5rem' justifyContent='center' p='0.8rem'>
+            <FaAngleLeft fontSize='1.1rem' />
+            <Text fontSize='0.9rem' fontWeight='medium'>VOLVER A ATRÁS</Text>
+          </Button>
+        )}
+
         {title
           ? (
             <Box
               as="section"
               textAlign="center"
-              h="2rem"
               position="relative"
-              top="8rem"
               w="100%"
               mb={marginBottomInTitle || '1rem'}
             >
@@ -65,8 +79,8 @@ const PageLayout = (props) => {
           ? (
             <Box
               display="flex"
-              alignItems="center"
-              justifyContent="center"
+              alignItems={centerChildren ? 'center' : 'start'}
+              justifyContent={centerChildren ? 'center' : 'start'}
               flexDirection="column"
               height="100%"
               width="100%"

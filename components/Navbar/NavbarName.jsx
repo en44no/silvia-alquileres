@@ -9,7 +9,7 @@ const NavbarName = (props) => {
 
   return (
     <>
-      <Link href='/home'>
+      <Link href='/'>
         <Box p="4" display='flex' gap='0.5rem'
           _hover={{
             transition: 'transform .2s',
