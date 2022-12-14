@@ -49,7 +49,7 @@ const PageLayout = (props) => {
         <Navbar />
 
         {showGoBack && (
-          <Button onClick={() => router.push(`/`)} border='1px solid' bg='#f0f6ff' _hover={{ 'bg': '#394e6a', 'color': '#fff' }} borderRadius='10px' display='flex' alignItems='center' gap='0.5rem' justifyContent='center' p='0.8rem'>
+          <Button onClick={() => router.push(`/`)} border='1px solid' bg='#f0f6ff' _hover={{ 'bg': '#394e6a', 'color': '#fff' }} borderRadius='18px' display='flex' alignItems='center' gap='0.5rem' justifyContent='center' p='0.8rem'>
             <FaAngleLeft fontSize='1.1rem' />
             <Text fontSize='0.9rem' fontWeight='medium'>VOLVER A ATRÁS</Text>
           </Button>

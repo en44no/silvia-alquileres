@@ -21,7 +21,7 @@ export default function Home() {
 
           <PropertyCard name='Punta Negra' src={puntaNegraImage} address='Misiones 1113 esq. Piria' toiletQuantity='5' bedQuantity='10' price='$4000 UYU' route='punta-negra' />
 
-          <PropertyCard name='Playa Grande' src={playaGrandeImage} address='Misiones 1113 esq. Piria' toiletQuantity='5' bedQuantity='10' price='$4000 UYU' route='playa-grande' />
+          <PropertyCard name='Playa Grande' src={playaGrandeImage} address='Misiones 1113 esq. Piria' toiletQuantity='5' bedQuantity='10' price='$4000 UYU' route='playa-grande' unavailableText='Enero agotado' />
 
         </Box>
       </Box>

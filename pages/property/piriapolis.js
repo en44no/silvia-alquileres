@@ -16,12 +16,11 @@ export default function Property() {
           <Box display='flex' bg='#fff' flexDirection='column' gap='0.5rem' alignItems='center' mt='1rem' mb='0.5rem'>
 
             <Text fontSize='2xl' fontWeight='bold'>$4000 UYU</Text>
-            <Text fontSize='sm' fontWeight='semibold' pb='0.5rem'>*Consultar por descuentos al pedir varios días.</Text>
+            <Text fontSize='sm' fontWeight='semibold' pb='0.5rem' color='#808080'>*Consultar por descuentos al pedir varios días.</Text>
 
             <Box
-              p='0'
+              p='0 1rem 1rem 1rem'
               m='0'
-              mb='-1rem'
               w='100%'
               justify='space-between'
               flexWrap='wrap'
@@ -31,7 +30,7 @@ export default function Property() {
                 },
               }}
             >
-              <Button onClick={() => window.open(`https://api.whatsapp.com/send/?phone=59895579099&text=%C2%A1Hola!+Estoy+interesado+en+alquilar+tu+propiedad+de+Piriápolis. ¿Podrías+decirme+en+qué+fecha+está+disponible?+Muchas gracias.`, '_ blank')} bg='#394e6a' color='#fff' _hover={{ 'bgColor': '#668dbf' }} w='100%' flex='1' variant='ghost' borderStartStartRadius='0' borderStartEndRadius='0' borderEndStartRadius='18px' borderEndEndRadius='18px' leftIcon={<BsWhatsapp />}>
+              <Button onClick={() => window.open(`https://api.whatsapp.com/send/?phone=59895579099&text=%C2%A1Hola!+Estoy+interesado+en+alquilar+tu+propiedad+de+Piriápolis. ¿Podrías+decirme+en+qué+fecha+está+disponible?+Muchas gracias.`, '_ blank')} bg='#394e6a' color='#fff' _hover={{ 'bgColor': '#668dbf' }} w='100%' variant='ghost' borderRadius='18px' leftIcon={<BsWhatsapp />}>
                 Consultar
               </Button>
             </Box>
@@ -54,7 +53,7 @@ export default function Property() {
 
       <Flex align="center" w='100%'>
         <Divider bg='#dee5f0' h='0.07rem' />
-        <Text padding='3' textAlign='center' minW='fit-content' fontSize='xl' fontWeight='bold'>Características generales</Text>
+        <Text padding='3' textAlign='center' minW='fit-content' fontSize='xl' fontWeight='bold'>Características</Text>
         <Divider bg='#dee5f0' h='0.07rem' />
       </Flex>
 

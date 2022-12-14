@@ -27,7 +27,7 @@ export default function PaymentMethods() {
     <PageLayout title='Métodos de pago' centerChildren={false}>
 
       <Box display='flex' justifyContent='center' w='100%'>
-        <Alert status='warning'>
+        <Alert status='warning' borderRadius='18px'>
           <AlertIcon />
           <Text fontWeight='semibold'>Antes de realizar cualquier tipo de transferencia deberás consultar la disponibilidad de la propiedad y esperar a mi confirmación.</Text>
         </Alert>
