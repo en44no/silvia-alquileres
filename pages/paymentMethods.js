@@ -29,7 +29,7 @@ export default function PaymentMethods() {
       <Box display='flex' justifyContent='center' w='100%'>
         <Alert status='warning' borderRadius='18px'>
           <AlertIcon />
-          <Text fontWeight='semibold'>Antes de realizar cualquier tipo de transferencia deberás consultar la disponibilidad de la propiedad y esperar a mi confirmación.</Text>
+          <Text fontWeight='semibold'>Antes de realizar cualquier tipo de transferencia deberás consultar la disponibilidad de la propiedad y esperar por mi confirmación.</Text>
         </Alert>
       </Box>
       <Flex align="center" w='100%'>
