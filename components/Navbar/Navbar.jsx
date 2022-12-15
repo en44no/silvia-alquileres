@@ -3,7 +3,7 @@ import {
   Flex, Spacer, Box, Center, Container
 } from '@chakra-ui/react';
 import Links from './Links';
-import NavbarName from './NavbarName';
+import NavbarImage from './NavbarImage';
 
 const Navbar = () => {
 
@@ -27,7 +27,7 @@ const Navbar = () => {
           <Flex>
             <Center>
               <Box>
-                <NavbarName goToTop="true" cursorPointer="true" />
+                <NavbarImage goToTop="true" cursorPointer="true" />
               </Box>
             </Center>
             <Spacer />

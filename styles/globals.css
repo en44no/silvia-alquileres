@@ -53,9 +53,16 @@ a {
 
 .carousel.carousel-slider {
   border-radius: 20px !important;
-  width: 80% !important;
-  height: 32rem !important;
 }
+
+@media only screen and (min-width: 768px) {
+  .carousel.carousel-slider {
+    border-radius: 20px !important;
+    width: 80% !important;
+    height: 32rem !important;
+  }
+}
+
 
 .carousel .control-dots {
   display: flex !important;

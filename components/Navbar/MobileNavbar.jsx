@@ -1,11 +1,10 @@
 import React from 'react';
 import {
-  Flex, Spacer, Box, Center, Button, Container
+  Flex, Box, Menu, MenuButton, MenuList, MenuItem, Button
 } from '@chakra-ui/react';
-import { ScaleFade } from '@chakra-ui/transition';
-import { UilApps } from '@iconscout/react-unicons';
-import NavbarName from './NavbarName';
-import Links from './Links';
+import NavbarImage from './NavbarImage';
+import { CgMenuLeftAlt } from 'react-icons/cg';
+import Link from 'next/link';
 
 const MobileNavbar = () => {
   const [show, setShow] = React.useState(false);
@@ -14,49 +13,52 @@ const MobileNavbar = () => {
     <>
       <Box
         as="nav"
-        position="fixed"
+        position="relative"
         width="100%"
         height="auto"
         zIndex="100"
-        bottom="0"
-        left="0"
         pb="4"
         bg={'#f0f6ff'}
         display={{
-          sm: 'block', md: 'block', lg: 'none', xl: 'none'
+          sm: "contents",
+          md: "contents",
+          lg: "none",
+          xl: "none"
         }}
       >
-        <Box display={show ? 'block' : 'none'}>
-          <ScaleFade direction="bottom" in={show}>
-            <Container>
-              <Box
-                textAlign="center"
-                justifyContent="center"
-                display="flex"
-                h="2.5rem"
-                alignItems="center"
-                fontSize="16px"
-                onClick={() => setShow(false)}
-              >
-                <Links />
-              </Box>
-            </Container>
-          </ScaleFade>
-        </Box>
-        <Flex>
-          <Center>
-            <Box>
-              <NavbarName />
-            </Box>
-          </Center>
-          <Spacer />
-          <Center />
-          <Box pt="1" mr="2" ml="1">
-            <Button padding="10px" onClick={() => setShow(!show)}>
-              <UilApps />
-            </Button>
+        <Box display='flex' alignItems='center'>
+
+          <Box w='50%'>
+            <Menu>
+
+              <MenuButton p='0' bg='#inherit' _hover={{ 'bg': 'none', 'boxShadow': 'none' }} _active={{ 'bg': 'none', 'boxShadow': 'none' }} as={Button} rightIcon={
+                <CgMenuLeftAlt fontSize='2rem' />}>
+              </MenuButton>
+
+              <MenuList ml='0.5rem' borderRadius='18px' p='0.5rem'>
+                <Link href='/'>
+                  <MenuItem borderRadius='18px' fontWeight='500' fontSize='0.9rem'>INICIO</MenuItem>
+                </Link>
+                <Link href='/frequent-questions'>
+                  <MenuItem borderRadius='18px' fontWeight='500' fontSize='0.9rem'>PREGUNTAS FRECUENTES</MenuItem>
+                </Link>
+                <Link href='/payment-methods'>
+                  <MenuItem borderRadius='18px' fontWeight='500' fontSize='0.9rem'>MÉTODOS DE PAGO</MenuItem>
+                </Link>
+              </MenuList>
+
+            </Menu>
           </Box>
-        </Flex>
+
+          <Flex display='flex' justifyContent='center' flexShrink='0'>
+            <NavbarImage imageSize={120} />
+          </Flex>
+
+          <Box w='50%'>
+          </Box>
+
+        </Box>
+
       </Box>
     </>
   );

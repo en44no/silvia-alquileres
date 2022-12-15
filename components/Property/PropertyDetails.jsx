@@ -19,14 +19,21 @@ const PropertyDetails = (props) => {
 
   return (
     <>
-      <Box display='flex' ml='-6rem'>
+      <Box display='flex' flexDirection={{ sm: 'column', md: 'column', lg: 'row' }} ml={{ sm: '0', md: '0', lg: '-6rem' }}>
         <MyCarousel />
 
-        <Box bg='#fff' h='fit-content' borderRadius='20px'>
+        <Box bg='#fff' border='2px solid #ebeff5' h='fit-content' borderRadius='20px'>
 
-          <GoogleMap src={googleMapsSrc} />
+          <Box display={{
+            sm: "none",
+            md: "none",
+            lg: "block",
+            xl: "block"
+          }}>
+            <GoogleMap src={googleMapsSrc} />
+          </Box>
 
-          <Box display='flex' bg='#fff' flexDirection='column' gap='0.5rem' alignItems='center' mt='1rem' mb='0.5rem'>
+          <Box display='flex' bg='#fff' flexDirection='column' gap={{ sm: '0rem', md: '0rem', lg: '0.5rem' }} alignItems='center' mt={{ sm: '0.5rem', md: '0.5rem', lg: '1rem' }} mb='0.5rem'>
 
             <Text fontSize='2xl' fontWeight='bold'>${price} UYU</Text>
             <Text fontSize='sm' fontWeight='semibold' pb='0.5rem' color='#808080'>*Consultar por descuentos al pedir varios días.</Text>
@@ -37,11 +44,6 @@ const PropertyDetails = (props) => {
               w='100%'
               justify='space-between'
               flexWrap='wrap'
-              sx={{
-                '& > button': {
-                  minW: '136px',
-                },
-              }}
             >
               <Button onClick={() => window.open(`https://api.whatsapp.com/send/?phone=59895579099&text=%C2%A1Hola!+Estoy+interesado+en+alquilar+tu+propiedad+de+${simpleLocation}. ¿Podrías+decirme+en+qué+fecha+está+disponible?+Muchas gracias.`, '_ blank')} bg='#394e6a' color='#fff' _hover={{ 'bgColor': '#668dbf' }} w='100%' variant='ghost' borderRadius='18px' leftIcon={<BsWhatsapp />}>
                 Consultar
@@ -51,7 +53,16 @@ const PropertyDetails = (props) => {
           </Box>
         </Box>
 
+        <Box w='100%' display={{
+          sm: "contents",
+          md: "contents",
+          lg: "none",
+          xl: "none"
+        }}>
+          <GoogleMap src={googleMapsSrc} width='100%' />
+        </Box>
       </Box>
+
 
 
       <Flex align="center" w='100%'>
@@ -70,9 +81,9 @@ const PropertyDetails = (props) => {
         <Divider bg='#dee5f0' h='0.07rem' />
       </Flex>
 
-      <Box display='flex' gap='5rem' mb='0.5rem'>
+      <Box display='flex' flexDirection={{ sm: 'column', md: 'row' }} w={{ sm: 'fit-content', md: '100%' }} gap={{ sm: '0', md: '0', lg: '5rem' }} alignItems={{ sm: 'center', md: 'normal' }} justifyContent={{ sm: 'space-between', md: 'space-between', lg: 'center' }} mb='0.5rem'>
 
-        <Box>
+        <Box w={{ sm: '100%', md: '100%', lg: 'fit-content' }}>
           {featuresLeftSide && featuresLeftSide.map((feature) => (
             <Box display='flex' alignItems='center' w='fit-content' gap='0.5rem'>
               <Text fontWeight='semibold' fontSize='1rem'>• {feature}</Text>
@@ -80,7 +91,7 @@ const PropertyDetails = (props) => {
           ))}
         </Box>
 
-        <Box>
+        <Box w={{ sm: '100%', md: '100%', lg: 'fit-content' }}>
           {featuresRightSide && featuresRightSide.map((feature) => (
             <Box display='flex' alignItems='center' w='fit-content' gap='0.5rem'>
               <Text fontWeight='semibold' fontSize='1rem'>• {feature}</Text>

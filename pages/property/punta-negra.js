@@ -3,7 +3,7 @@ import PropertyDetails from "../../components/Property/PropertyDetails";
 
 export default function Property() {
   return (
-    <PageLayout title='Casa en Punta Negra' showGoBack='true'>
+    <PageLayout title='Casa en Punta Negra' showGoBack={true}>
 
       <PropertyDetails
         price='4000'

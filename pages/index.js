@@ -13,9 +13,9 @@ export default function Home() {
 
   return (
     <PageLayout title='Propiedades'>
-      <Box w='100%' display='flex' flexDirection='column' alignItems='center'>
+      <Box w='100%' display='flex' flexDirection='column' alignItems='center' mb={{ sm: '2rem', md: '2rem', lg: '0' }}>
 
-        <Box display='flex' gap='5rem' mt='-5rem'>
+        <Box display='flex' justifyContent='center' gap={{ sm: '1rem', md: '1rem', lg: '5rem' }} mt={{ sm: '0', md: '0', lg: '-5rem' }} flexFlow='wrap'>
 
           <PropertyCard name='Piriápolis' src={piriapolisImage} address='Misiones 1113 esq. Piria' toiletQuantity='5' bedQuantity='10' price='$4000 UYU' route='piriapolis' />
 

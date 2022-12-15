@@ -4,8 +4,8 @@ import logoImage from "../../public/images/logo.png"
 import Image from 'next/image'
 import Link from 'next/link';
 
-const NavbarName = (props) => {
-  const { cursorPointer } = props;
+const NavbarImage = (props) => {
+  const { cursorPointer, imageSize } = props;
 
   return (
     <>
@@ -19,8 +19,8 @@ const NavbarName = (props) => {
           cursor={cursorPointer ? () => 'pointer' : null}>
           <Image
             src={logoImage}
-            width={110}
-            height={110}
+            width={imageSize ? imageSize : 110}
+            height={imageSize ? imageSize : 110}
             alt="Logo Silvia Alquileres"
           />
         </Box>
@@ -29,4 +29,4 @@ const NavbarName = (props) => {
   );
 };
 
-export default NavbarName;
+export default NavbarImage;

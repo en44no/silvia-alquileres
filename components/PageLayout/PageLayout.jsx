@@ -7,6 +7,7 @@ import PageLayoutNextButton from './PageLayoutNextButton';
 import Navbar from '../Navbar/Navbar';
 import { FaAngleLeft } from 'react-icons/fa';
 import { useRouter } from 'next/router';
+import MobileNavbar from '../Navbar/MobileNavbar';
 
 const PageLayout = (props) => {
 
@@ -45,12 +46,14 @@ const PageLayout = (props) => {
         display="flex"
         flexDirection="column"
       >
+
+        <MobileNavbar />
         <Navbar />
 
         {showGoBack && (
-          <Button onClick={() => router.push(`/`)} border='1px solid' bg='#fff' _hover={{ 'bg': '#394e6a', 'color': '#fff' }} borderRadius='18px' display='flex' alignItems='center' gap='0.5rem' justifyContent='center' p='0.8rem'>
+          <Button onClick={() => router.push(`/`)} border='2px solid #ebeff5' bg='#fff' _hover={{ 'bg': '#394e6a', 'color': '#fff', 'border': '2px solid' }} borderRadius='18px' display='flex' alignItems='center' gap='0.5rem' justifyContent='center' p='1.2rem'>
             <FaAngleLeft fontSize='1.1rem' />
-            <Text fontSize='0.9rem' fontWeight='medium'>VOLVER A ATRÁS</Text>
+            <Text fontSize='0.9rem' fontWeight='medium'>VOLVER A INICIO</Text>
           </Button>
         )}
 
@@ -61,7 +64,7 @@ const PageLayout = (props) => {
               textAlign="center"
               position="relative"
               w="100%"
-              mb={marginBottomInTitle || '1rem'}
+              mb={{ sm: marginBottomInTitle || '0rem', md: marginBottomInTitle || '0rem', lg: marginBottomInTitle || '1rem' }}
             >
               <PageLayoutHeader title={title} />
             </Box>
@@ -81,7 +84,7 @@ const PageLayout = (props) => {
               alignItems={centerChildren ? 'center' : 'start'}
               justifyContent={centerChildren ? 'center' : 'start'}
               flexDirection="column"
-              height="100%"
+              height={{ sm: 'fit-content', md: 'fit-content', lg: '100%' }}
               width="100%"
             >
               {children}

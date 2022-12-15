@@ -24,7 +24,7 @@ export default function PaymentMethods() {
   let brouDollarsAccountNumber = 999999;
 
   return (
-    <PageLayout title='Métodos de pago' centerChildren={false}>
+    <PageLayout title='Métodos de pago' centerChildren={false} showGoBack={true}>
 
       <Box display='flex' justifyContent='center' w='100%'>
         <Alert status='warning' borderRadius='18px'>
@@ -32,6 +32,7 @@ export default function PaymentMethods() {
           <Text fontWeight='semibold'>Antes de realizar cualquier tipo de transferencia deberás consultar la disponibilidad de la propiedad y esperar por mi confirmación.</Text>
         </Alert>
       </Box>
+
       <Flex align="center" w='100%'>
         <Divider bg='#dee5f0' h='0.07rem' />
         <Text padding='3' textAlign='center' minW='fit-content' fontSize='xl' fontWeight='bold'>Transferencias</Text>
@@ -39,7 +40,6 @@ export default function PaymentMethods() {
       </Flex>
 
       <Box w='100%'>
-
         <Box display='flex' flexDirection='column' alignItems='center'>
           <Box display='flex' w='fit-content' gap='0.5rem'>
             <Text display='flex' alignItems='center' gap='0.5rem' fontWeight='semibold' fontSize='1rem'>Brou pesos - {brouPesosAccountNumber} <FaCopy style={{ 'cursor': 'pointer' }} onClick={() => copyToClipboard(brouPesosAccountNumber)} /></Text>

@@ -12,7 +12,7 @@ const PropertyCard = (props) => {
   const { name, src, address, toiletQuantity, bedQuantity, route, price, unavailableText } = props;
 
   return (
-    <Card p='0' maxW='md' bg='white' color='#394e6a' borderRadius='20px'>
+    <Card p='0' w={{ sm: '90%', md: '90%', lg: '22rem' }} boxShadow='none' border='2px solid #ebeff5' bg='white' color='#394e6a' borderRadius='20px'>
 
       <Box className='image-container' position='relative'>
 

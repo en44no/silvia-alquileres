@@ -38,7 +38,7 @@ const Links = () => {
           }}
           fontWeight="semibold"
         >
-          <Link href='/contact'>CONTACTO</Link>
+          <Link href='/frequent-questions'>PREGUNTAS FRECUENTES</Link>
         </Box>
 
         <Box
@@ -54,7 +54,7 @@ const Links = () => {
           }}
           fontWeight="semibold"
         >
-          <Link href='/paymentMethods'>MÉTODOS DE PAGO</Link>
+          <Link href='/payment-methods'>MÉTODOS DE PAGO</Link>
         </Box>
       </Flex>
     </>
