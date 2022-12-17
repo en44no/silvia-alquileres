@@ -53,6 +53,14 @@ a {
 
 .carousel.carousel-slider {
   border-radius: 20px !important;
+  -webkit-border-radius: 20px !important;
+  -moz-border-radius: 20px !important;
+}
+
+.carousel.carousel-slider img {
+  border-radius: 20px !important;
+  -webkit-border-radius: 20px !important;
+  -moz-border-radius: 20px !important;
 }
 
 @media only screen and (min-width: 768px) {
