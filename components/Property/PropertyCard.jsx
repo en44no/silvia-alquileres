@@ -12,11 +12,11 @@ const PropertyCard = (props) => {
   const { name, src, address, toiletQuantity, bedQuantity, route, price, unavailableText } = props;
 
   return (
-    <Card p='0' w={{ sm: '90%', md: '90%', lg: '22rem' }} boxShadow='none' border='2px solid #ebeff5' bg='white' color='#394e6a' borderRadius='20px'>
+    <Card p='0' w={{ sm: '90%', md: '90%', lg: '18rem', xl: '18rem', xxl: '22rem' }} boxShadow='none' border='2px solid #ebeff5' bg='white' color='#394e6a' borderRadius='20px'>
 
       <Box className='image-container' position='relative'>
 
-        <Image onClick={() => router.push(`/property/${route}`)} style={{ 'width': '100%', 'height': '15rem', 'borderStartStartRadius': '18px', 'borderStartEndRadius': '18px', 'objectFit': 'cover', 'cursor': 'pointer' }}
+        <Image className='property-image' onClick={() => router.push(`/property/${route}`)} style={{ 'width': '100%', 'height': '15rem', 'borderStartStartRadius': '18px', 'borderStartEndRadius': '18px', 'objectFit': 'cover', 'cursor': 'pointer' }}
           src={src}
         />
 

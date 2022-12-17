@@ -84,7 +84,7 @@ const PageLayout = (props) => {
               alignItems={centerChildren ? 'center' : 'start'}
               justifyContent={centerChildren ? 'center' : 'start'}
               flexDirection="column"
-              height={{ sm: 'fit-content', md: 'fit-content', lg: '100%' }}
+              height={{ sm: 'fit-content', md: 'fit-content', lg: 'fit-content', xl: '100%' }}
               width="100%"
             >
               {children}

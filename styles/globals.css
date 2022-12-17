@@ -63,8 +63,27 @@ a {
   }
 }
 
-
 .carousel .control-dots {
   display: flex !important;
   justify-content: center !important;
+}
+
+@media only screen and (min-width: 768px) {
+  .carousel.carousel-slider {
+    border-radius: 20px !important;
+    width: 80% !important;
+    height: 32rem !important;
+  }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1599px) {
+  .property-image {
+    height: 11rem !important;
+  }
+
+  .carousel.carousel-slider {
+    border-radius: 20px !important;
+    width: 80% !important;
+    height: 32rem !important;
+  }
 }

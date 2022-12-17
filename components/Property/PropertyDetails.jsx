@@ -22,7 +22,7 @@ const PropertyDetails = (props) => {
       <Box display='flex' flexDirection={{ sm: 'column', md: 'column', lg: 'row' }} ml={{ sm: '0', md: '0', lg: '-6rem' }}>
         <MyCarousel />
 
-        <Box bg='#fff' border='2px solid #ebeff5' h='fit-content' borderRadius='20px'>
+        <Box bg='#fff' border={{ sm: 'none', md: 'none', lg: '2px solid #ebeff5' }} h='fit-content' borderRadius='20px'>
 
           <Box display={{
             sm: "none",
