@@ -95,3 +95,15 @@ a {
     height: 32rem !important;
   }
 }
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .property-image {
+    height: 11rem !important;
+  }
+
+  .carousel.carousel-slider {
+    border-radius: 20px !important;
+    width: 100% !important;
+    height: 32rem !important;
+  }
+}

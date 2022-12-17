@@ -19,21 +19,21 @@ const PropertyDetails = (props) => {
 
   return (
     <>
-      <Box display='flex' flexDirection={{ sm: 'column', md: 'column', lg: 'row' }} ml={{ sm: '0', md: '0', lg: '-6rem' }}>
+      <Box display='flex' flexDirection={{ sm: 'column', md: 'column', lg: 'column', xl: 'row' }} ml={{ sm: '0', md: '0', lg: '0', xl: '-6rem' }}>
         <MyCarousel />
 
-        <Box bg='#fff' border={{ sm: 'none', md: 'none', lg: '2px solid #ebeff5' }} h='fit-content' borderRadius='20px'>
+        <Box bg='#fff' border={{ sm: 'none', md: 'none', lg: 'none', xl: '2px solid #ebeff5' }} h='fit-content' borderRadius='20px'>
 
           <Box display={{
             sm: "none",
             md: "none",
-            lg: "block",
+            lg: "none",
             xl: "block"
           }}>
             <GoogleMap src={googleMapsSrc} />
           </Box>
 
-          <Box display='flex' bg='#fff' flexDirection='column' gap={{ sm: '0rem', md: '0rem', lg: '0.5rem' }} alignItems='center' mt={{ sm: '0.5rem', md: '0.5rem', lg: '1rem' }} mb='0.5rem'>
+          <Box display='flex' bg='#fff' flexDirection='column' gap={{ sm: '0rem', md: '0rem', lg: '0rem', xl: '0.5rem' }} alignItems='center' mt={{ sm: '0.5rem', md: '0.5rem', lg: '0.5rem', xl: '1rem' }} mb='0.5rem'>
 
             <Text fontSize='2xl' fontWeight='bold'>${price} UYU</Text>
             <Text fontSize='sm' fontWeight='semibold' pb='0.5rem' color='#808080'>*Consultar por descuentos al pedir varios días.</Text>
@@ -56,7 +56,7 @@ const PropertyDetails = (props) => {
         <Box w='100%' display={{
           sm: "contents",
           md: "contents",
-          lg: "none",
+          lg: "contents",
           xl: "none"
         }}>
           <GoogleMap src={googleMapsSrc} width='100%' />
