@@ -7,7 +7,6 @@ import { CgMenuLeftAlt } from 'react-icons/cg';
 import Link from 'next/link';
 
 const MobileNavbar = () => {
-  const [show, setShow] = React.useState(false);
 
   return (
     <>
