@@ -1,7 +1,5 @@
 import React from 'react';
-import {
-  Box, Flex, useMediaQuery
-} from '@chakra-ui/react';
+import { Box, Flex } from '@chakra-ui/react';
 import Link from 'next/link'
 
 const Links = () => {

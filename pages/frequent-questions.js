@@ -1,6 +1,5 @@
 import { Box, Button, Divider, Flex, Text } from "@chakra-ui/react";
 import { BsWhatsapp } from "react-icons/bs";
-import { FaCopy } from "react-icons/fa";
 import PageLayout from "../components/PageLayout/PageLayout";
 
 export default function Contact() {

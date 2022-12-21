@@ -30,7 +30,7 @@ const PageLayout = (props) => {
       <Head>
         <title>{title}</title>
         <meta name='description' content='Silvia alquileres'></meta>
-        <link rel='icon' href='/favicon.ico'></link>
+        <link rel='icon' href='/images/logo-white-text.png'></link>
       </Head>
 
 
