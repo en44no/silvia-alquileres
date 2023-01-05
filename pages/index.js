@@ -1,7 +1,6 @@
 import { Box } from '@chakra-ui/react'
 import PageLayout from '../components/PageLayout/PageLayout'
 import piriapolisImage from '../public/images/piriapolis.jpg'
-import playaGrandeImage from '../public/images/playa-grande.jpeg'
 import puntaNegraImage from '../public/images/punta-negra.jpeg'
 import PropertyCard from '../components/Property/PropertyCard'
 
@@ -16,8 +15,6 @@ export default function Home() {
           <PropertyCard name='Piriápolis' src={piriapolisImage} address='Misiones 1113 esq. Piria' toiletQuantity='5' bedQuantity='10' peopleQuantity='2' price='$2200 UYU' route='piriapolis' />
 
           <PropertyCard name='Punta Negra' src={puntaNegraImage} address='Misiones 1113 esq. Piria' toiletQuantity='5' bedQuantity='10' peopleQuantity='6' price='$3500 UYU' route='punta-negra' />
-
-          {/* <PropertyCard name='Playa Grande' src={playaGrandeImage} address='Misiones 1113 esq. Piria' toiletQuantity='5' bedQuantity='10' price='$4000 UYU' route='playa-grande' unavailableText='Enero agotado' /> */}
 
         </Box>
       </Box>
