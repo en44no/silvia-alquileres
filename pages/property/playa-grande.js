@@ -14,6 +14,7 @@ export default function Property() {
         featuresRightSide={['Parrillero', 'TV de 32 pulgadas con cable', 'Wifi', 'Cocina, heladera, microondas', 'Ventilador']}
         observations={['Luz y agua incluídos en el precio.', 'Mínimo de alquiler dos días.', 'Horario check in: 10:00', 'Horario check out: 12:00']}
         googleMapsSrc='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d409.21279044420436!2d-55.26936714295279!3d-34.863706309384284!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9575425fefb01769%3A0x6256a2b703d3cd69!2sMisiones%201113%2C%2020200%20Piri%C3%A1polis%2C%20Departamento%20de%20Maldonado!5e0!3m2!1ses-419!2suy!4v1670907535461!5m2!1ses-419!2suy'
+        imagesSrc={['']}
       />
 
     </PageLayout>

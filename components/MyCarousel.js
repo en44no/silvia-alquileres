@@ -1,15 +1,11 @@
-import { Box, Button } from '@chakra-ui/react';
-import Image from 'next/image';
+import { Box, Button, Image } from '@chakra-ui/react';
 import React from 'react'
 import { FaChevronLeft, FaChevronRight, FaDotCircle, FaRegDotCircle } from 'react-icons/fa';
 import { Carousel } from 'react-responsive-carousel'
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
-import piriapolisImage from '../public/images/piriapolis.jpg'
-import playaGrandeImage from '../public/images/playa-grande.jpeg'
-import puntaNegraImage from '../public/images/punta-negra.jpeg'
-
-const MyCarousel = () => {
+const MyCarousel = (props) => {
+  const { imagesSrc } = props;
 
   const arrowStyles = {
     position: 'absolute',
@@ -55,15 +51,13 @@ const MyCarousel = () => {
           </span>
         );
       }}>
-      <Box>
-        <Image style={{ 'shadow': '0 4px 6px -1px rgba(0, 0, 0, 0.1),0 2px 4px -1px rgba(0, 0, 0, 0.06)' }} src={piriapolisImage} />
-      </Box>
-      <Box>
-        <Image style={{ 'shadow': '0 4px 6px -1px rgba(0, 0, 0, 0.1),0 2px 4px -1px rgba(0, 0, 0, 0.06)' }} src={playaGrandeImage} />
-      </Box>
-      <Box>
-        <Image style={{ 'shadow': '0 4px 6px -1px rgba(0, 0, 0, 0.1),0 2px 4px -1px rgba(0, 0, 0, 0.06)' }} src={puntaNegraImage} />
-      </Box>
+
+      {imagesSrc.map((src) =>
+        <Box>
+          <Image style={{ 'shadow': '0 4px 6px -1px rgba(0, 0, 0, 0.1),0 2px 4px -1px rgba(0, 0, 0, 0.06)' }} src={src} />
+        </Box>
+      )}
+
     </Carousel>
   )
 }

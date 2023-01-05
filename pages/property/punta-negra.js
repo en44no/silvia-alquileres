@@ -6,14 +6,16 @@ export default function Property() {
     <PageLayout title='Casa en Punta Negra' showGoBack={true}>
 
       <PropertyDetails
-        price='4000'
+        price='3500'
         name='Casa en Punta Negra'
         simpleLocation='Punta Negra'
-        description='Casa para dos personas ubicada en la ciudad de Piriápolis, en las calles Misiones y Piria (1113), a una cuadra del Hipercentro Devoto, a 6 de la playa y 4 de la terminal.'
-        featuresLeftSide={['1 baño', '1 dormitorio, 1 cama', '2 huéspedes', 'Cochera', 'Rejas, cámaras']}
-        featuresRightSide={['Parrillero', 'TV de 32 pulgadas con cable', 'Wifi', 'Cocina, heladera, microondas', 'Ventilador']}
+        description='Casa con comodidades para 6 personas ubicada en la ciudad de Piriápolis, en las calles Misiones y Piria (1113), a una cuadra del Hipercentro Devoto, a 6 de la playa y 4 de la terminal.'
+        featuresLeftSide={['1 baño', '2 dormitorios, 3 camas (matrimonial, cuchetas y marinera)', '6 huéspedes', 'Predio cercado', 'Parrillero (dentro de la casa)']}
+        featuresRightSide={['TV con Directv', 'Cocina', 'Microondas', 'Lavadora', 'Ventiladores']}
         observations={['Luz y agua incluídos en el precio.', 'Mínimo de alquiler dos días.', 'Horario check in: 10:00', 'Horario check out: 12:00']}
-        googleMapsSrc='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d409.21279044420436!2d-55.26936714295279!3d-34.863706309384284!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9575425fefb01769%3A0x6256a2b703d3cd69!2sMisiones%201113%2C%2020200%20Piri%C3%A1polis%2C%20Departamento%20de%20Maldonado!5e0!3m2!1ses-419!2suy!4v1670907535461!5m2!1ses-419!2suy'
+        googleMapsSrc='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3272.6514437092255!2d-55.22008798423788!3d-34.890097980215145!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb75bceddc2142409!2zMzTCsDUzJzI0LjQiUyA1NcKwMTMnMDQuNCJX!5e0!3m2!1ses!2suy!4v1672669319395!5m2!1ses!2suy" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade'
+        imagesSrc={['/images/puntaNegra/1.jpg', '/images/puntaNegra/2.jpg', '/images/puntaNegra/3.jpg', '/images/puntaNegra/4.jpg', '/images/puntaNegra/5.jpg', '/images/puntaNegra/6.jpg', '/images/puntaNegra/7.jpg', '/images/puntaNegra/8.jpg', '/images/puntaNegra/9.jpg', '/images/puntaNegra/10.jpg', '/images/puntaNegra/11.jpg', '/images/puntaNegra/12.jpg', '/images/puntaNegra/13.jpg', '/images/puntaNegra/14.jpg', '/images/puntaNegra/15.jpg', '/images/puntaNegra/16.jpg', '/images/puntaNegra/17.jpg', '/images/puntaNegra/18.jpg', '/images/puntaNegra/19.jpg', '/images/puntaNegra/20.jpg']}
+        gastosIncluidos={true}
       />
 
     </PageLayout>

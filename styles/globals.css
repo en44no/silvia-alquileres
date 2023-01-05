@@ -35,7 +35,6 @@ a {
 }
 
 .image-container img {
-  display: block;
   transition: transform .4s;
   /* smoother zoom */
 }
@@ -74,6 +73,10 @@ a {
 .carousel .control-dots {
   display: flex !important;
   justify-content: center !important;
+}
+
+.carousel .slide img {
+  width: fit-content !important;
 }
 
 @media only screen and (min-width: 768px) {

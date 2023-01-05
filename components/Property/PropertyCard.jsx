@@ -1,7 +1,7 @@
 import React from 'react'
 import { Box, Text, Card, CardBody, CardFooter, Button, Divider, Alert, AlertIcon } from '@chakra-ui/react';
 import { BsWhatsapp } from 'react-icons/bs';
-import { FaToilet, FaBed, FaSearch } from 'react-icons/fa';
+import { FaToilet, FaBed, FaSearch, FaUser } from 'react-icons/fa';
 import { MdLocationOn } from 'react-icons/md';
 import Image from 'next/image'
 import { useRouter } from 'next/router';
@@ -9,7 +9,7 @@ import { useRouter } from 'next/router';
 const PropertyCard = (props) => {
 
   const router = useRouter()
-  const { name, src, address, toiletQuantity, bedQuantity, route, price, unavailableText } = props;
+  const { name, src, address, toiletQuantity, bedQuantity, peopleQuantity, route, price, unavailableText } = props;
 
   return (
     <Card p='0' w={{ sm: '100%', md: '90%', lg: '18rem', xl: '18rem', xxl: '22rem' }} boxShadow='none' border='2px solid #ebeff5' bg='white' color='#394e6a' borderRadius='20px'>
@@ -68,6 +68,14 @@ const PropertyCard = (props) => {
             <Box display='flex' gap='0.5rem'>
               <Text fontSize='1.2rem'><FaToilet style={{ 'color': '#808080' }} /></Text>
               <Text fontWeight='semibold' mt='-0.1rem'>{toiletQuantity}</Text>
+            </Box>
+          </Box>
+
+          <Box display='flex' color='#808080' flexDirection='column' justifyContent='left' w='fit-content' gap='0.5rem'>
+            <Text fontWeight='semibold'>Personas</Text>
+            <Box display='flex' gap='0.5rem'>
+              <Text fontSize='1.2rem'><FaUser style={{ 'color': '#808080' }} /></Text>
+              <Text fontWeight='semibold' mt='-0.1rem'>{peopleQuantity}</Text>
             </Box>
           </Box>
 
