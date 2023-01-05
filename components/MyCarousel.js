@@ -10,10 +10,11 @@ const MyCarousel = (props) => {
   const [loaded, setLoaded] = React.useState(false)
   const [sliderRef, instanceRef] = useKeenSlider({
     loop: true,
-    mode: "snap",
     rtl: false,
-    slides: { perView: "auto" },
     initial: 0,
+    slidesPerView: 1,
+    mode: "free-snap",
+    centered: true,
     slideChanged(slider) {
       setCurrentSlide(slider.track.details.rel)
     },
