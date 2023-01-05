@@ -9,7 +9,7 @@ const MyCarousel = (props) => {
   const [currentSlide, setCurrentSlide] = React.useState(0)
   const [loaded, setLoaded] = React.useState(false)
   const [sliderRef, instanceRef] = useKeenSlider({
-    loop: false,
+    loop: true,
     mode: "snap",
     rtl: false,
     slides: { perView: "auto" },
@@ -41,16 +41,11 @@ const MyCarousel = (props) => {
               onClick={(e) =>
                 e.stopPropagation() || instanceRef.current?.prev()
               }
-              disabled={currentSlide === 0}
             />
 
             <Arrow
               onClick={(e) =>
                 e.stopPropagation() || instanceRef.current?.next()
-              }
-              disabled={
-                currentSlide ===
-                instanceRef.current.track.details.slides.length - 1
               }
             />
           </>
@@ -83,12 +78,11 @@ const MyCarousel = (props) => {
 }
 
 function Arrow(props) {
-  const disabeld = props.disabled ? " arrow--disabled" : ""
   return (
     <svg
       onClick={props.onClick}
       className={`arrow ${props.left ? "arrow--left" : "arrow--right"
-        } ${disabeld}`}
+        }`}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
     >
