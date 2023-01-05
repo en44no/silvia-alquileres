@@ -1,6 +1,5 @@
 import { Box, Image } from '@chakra-ui/react';
 import React from 'react'
-import "react-responsive-carousel/lib/styles/carousel.min.css";
 import 'keen-slider/keen-slider.min.css'
 import { useKeenSlider } from 'keen-slider/react'
 
