@@ -72,11 +72,11 @@ const PropertyDetails = (props) => {
 
       <Flex align="center" w='100%'>
         <Divider bg='#dee5f0' h='0.07rem' />
-        <Text padding='3' textAlign='center' minW='fit-content' fontSize='xl' fontWeight='bold'>Descripción</Text>
+        <Text padding='3' textAlign={{ sm: 'left', md: 'center' }} minW='fit-content' fontSize='xl' fontWeight='bold'>Descripción</Text>
         <Divider bg='#dee5f0' h='0.07rem' />
       </Flex>
 
-      <Text textAlign='center' fontWeight='semibold'>
+      <Text textAlign={{ sm: 'left', md: 'center' }} fontWeight='semibold'>
         {description}
       </Text>
 
@@ -86,11 +86,11 @@ const PropertyDetails = (props) => {
         <Divider bg='#dee5f0' h='0.07rem' />
       </Flex>
 
-      <Box display='flex' flexDirection={{ sm: 'column', md: 'row' }} w={{ sm: 'fit-content', md: '100%' }} gap={{ sm: '0', md: '0', lg: '5rem' }} alignItems={{ sm: 'center', md: 'normal' }} justifyContent={{ sm: 'space-between', md: 'space-between', lg: 'center' }} mb='0.5rem'>
+      <Box display='flex' flexDirection={{ sm: 'column', md: 'row' }} w={{ sm: '100%', md: '100%' }} gap={{ sm: '0', md: '0', lg: '5rem' }} alignItems={{ sm: 'left', md: 'normal' }} justifyContent={{ sm: 'space-between', md: 'space-between', lg: 'center' }} mb='0.5rem'>
 
         <Box w={{ sm: '100%', md: '100%', lg: 'fit-content' }}>
           {featuresLeftSide && featuresLeftSide.map((feature) => (
-            <Box display='flex' alignItems='center' w='fit-content' gap='0.5rem'>
+            <Box display='flex' alignItems={{ sm: 'left', md: 'center' }} w='fit-content' gap='0.5rem'>
               <Text fontWeight='semibold' fontSize='1rem'>• {feature}</Text>
             </Box>
           ))}
@@ -98,7 +98,7 @@ const PropertyDetails = (props) => {
 
         <Box w={{ sm: '100%', md: '100%', lg: 'fit-content' }}>
           {featuresRightSide && featuresRightSide.map((feature) => (
-            <Box display='flex' alignItems='center' w='fit-content' gap='0.5rem'>
+            <Box display='flex' alignItems={{ sm: 'left', md: 'center' }} w='fit-content' gap='0.5rem'>
               <Text fontWeight='semibold' fontSize='1rem'>• {feature}</Text>
             </Box>
           ))}
@@ -113,11 +113,11 @@ const PropertyDetails = (props) => {
           <Divider bg='#dee5f0' h='0.07rem' />
         </Flex>
 
-        <Box display='flex' flexDirection='column' alignItems='center'>
+        <Box display='flex' flexDirection='column' alignItems={{ sm: 'left', md: 'center' }}>
 
           {observations && observations.map((observation) => (
             <Box display='flex' w='fit-content' gap='0.5rem'>
-              <Text fontWeight='semibold' fontSize='1rem'>{observation}</Text>
+              <Text textAlign='left' fontWeight='semibold' fontSize='1rem'>{observation}</Text>
             </Box>
           ))}
 

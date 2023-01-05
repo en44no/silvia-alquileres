@@ -26,7 +26,7 @@ export default function Contact() {
 
       <Flex align="center" w='100%'>
         <Divider bg='#dee5f0' h='0.07rem' />
-        <Text padding='3' textAlign='center' minW='fit-content' fontSize='xl' fontWeight='bold'>¿Debo hacer una entrega para reservar una propiedad?</Text>
+        <Text padding='3' textAlign='center' minW='fit-content' fontSize='xl' fontWeight='bold'>¿Debo hacer entrega para reservar una propiedad?</Text>
         <Divider bg='#dee5f0' h='0.07rem' />
       </Flex>
 
