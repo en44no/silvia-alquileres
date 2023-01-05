@@ -28,7 +28,7 @@ const MyCarousel = (props) => {
 
         {imagesSrc.map((src, index = 1) =>
           <Box key={src} className={`keen-slider__slide number-slide${index}`} style={{ maxWidth: '100%', minWidth: '100%' }}>
-            <Image style={{ 'shadow': '0 4px 6px -1px rgba(0, 0, 0, 0.1),0 2px 4px -1px rgba(0, 0, 0, 0.06)' }} src={src} />
+            <Image style={{ 'shadow': '0 4px 6px -1px rgba(0, 0, 0, 0.1),0 2px 4px -1px rgba(0, 0, 0, 0.06)' }} borderRadius='20px' src={src} />
           </Box>
         )}
 
