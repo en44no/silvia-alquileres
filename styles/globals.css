@@ -183,6 +183,11 @@ a {
   padding: 0.4rem 0.5rem 0.4rem 0.5rem;
 }
 
+.arrow--disabled {
+  color: #fff;
+  display: none;
+}
+
 .noSelect {
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
