@@ -16,7 +16,7 @@ const PropertyCard = (props) => {
 
       <Box className='image-container' position='relative'>
 
-        <Image className='property-image' onClick={() => router.push(`/property/${route}`)} style={{ 'width': '100%', 'height': '15rem', 'borderStartStartRadius': '18px', 'borderStartEndRadius': '18px', 'objectFit': 'cover', 'cursor': 'pointer' }}
+        <Image alt={`Propiedad "${name}"`} className='property-image' onClick={() => router.push(`/property/${route}`)} style={{ 'width': '100%', 'height': '15rem', 'borderStartStartRadius': '18px', 'borderStartEndRadius': '18px', 'objectFit': 'cover', 'cursor': 'pointer' }}
           src={src}
         />
 
