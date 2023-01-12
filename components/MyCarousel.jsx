@@ -5,7 +5,6 @@ import { useKeenSlider } from 'keen-slider/react'
 
 const MyCarousel = (props) => {
   const { imagesSrc, videosLinks } = props;
-  const [scrollHeight, setScrollHeight] = React.useState(0);
 
   const [loading, setLoading] = React.useState(true);
 
@@ -14,22 +13,6 @@ const MyCarousel = (props) => {
       setLoading(false);
     }, 2000);
   })
-
-  const handleScroll = () => {
-    const position = window.pageYOffset;
-
-    setScrollHeight(position);
-  };
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-  }, [scrollHeight]);
-
-  const goToTop = () => {
-    setTimeout(() => {
-      window.scrollTo({ top: 100, behavior: 'smooth' });
-    }, 2000);
-  };
 
   const [currentSlide, setCurrentSlide] = React.useState(0)
   const [loaded, setLoaded] = React.useState(false)
