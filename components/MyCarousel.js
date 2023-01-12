@@ -24,13 +24,18 @@ const MyCarousel = (props) => {
 
   return (
     <div className="navigation-wrapper">
-      <Box ref={sliderRef} className="keen-slider" minW={{ sm: 360, md: 600, lg: 600, xl: 600 }} style={{ maxWidth: 600, height: '100%' }} border='2px solid #ebeff5' borderRadius='20px'>
+      <Box ref={sliderRef} className="keen-slider" minW={{ sm: 0, md: 600, lg: 600, xl: 600 }} maxW={{ sm: 400, md: 600, lg: 600, xl: 600 }} style={{ height: '100%' }} border='2px solid #ebeff5' borderRadius='20px'>
 
         {imagesSrc.map((src, index = 1) =>
           <Box key={src} className={`keen-slider__slide number-slide${index}`} style={{ maxWidth: '100%', minWidth: '100%' }}>
             <Image alt='Imágen de la casa' style={{ 'shadow': '0 4px 6px -1px rgba(0, 0, 0, 0.1),0 2px 4px -1px rgba(0, 0, 0, 0.06)' }} borderRadius='20px' src={src} />
           </Box>
         )}
+
+        <iframe width="100%" height="100%" className={`keen-slider__slide number-slide99`} style={{ maxWidth: '100%', minWidth: '100%' }}
+          src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&mute=1">
+        </iframe>
+
 
       </Box>
       {
