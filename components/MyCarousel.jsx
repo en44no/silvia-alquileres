@@ -1,10 +1,19 @@
 import { Box, Image } from '@chakra-ui/react';
-import React from 'react'
+import React, { useEffect } from 'react'
 import 'keen-slider/keen-slider.min.css'
 import { useKeenSlider } from 'keen-slider/react'
+import Loader from './Loader';
 
 const MyCarousel = (props) => {
   const { imagesSrc } = props;
+  const [loading, setLoading] = React.useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+  })
+
 
   const [currentSlide, setCurrentSlide] = React.useState(0)
   const [loaded, setLoaded] = React.useState(false)
@@ -23,8 +32,12 @@ const MyCarousel = (props) => {
   })
 
   return (
-    <div className="navigation-wrapper">
-      <Box ref={sliderRef} className="keen-slider" minW={{ sm: '100%', md: 600, lg: 600, xl: 600 }} maxW={{ sm: '100%', md: 600, lg: 600, xl: 600 }} style={{ height: '100%' }} border='2px solid #ebeff5' borderRadius='20px'>
+    <Box className="navigation-wrapper" border='2px solid #ebeff5' borderRadius='20px'>
+      <Box style={{ 'display': loading ? 'initial' : 'none' }}>
+        <Loader />
+      </Box>
+
+      <Box style={{ 'visibility': loading ? 'hidden' : 'initial', height: '100%' }} ref={sliderRef} className="keen-slider" minW={{ sm: '100%', md: 600, lg: 600, xl: 600 }} maxW={{ sm: '100%', md: 600, lg: 600, xl: 600 }}>
 
         {imagesSrc.map((src, index = 1) =>
           <Box key={src} className={`keen-slider__slide number-slide${index}`} style={{ maxWidth: '100%', minWidth: '100%' }}>
@@ -38,6 +51,8 @@ const MyCarousel = (props) => {
 
 
       </Box>
+
+
       {
         loaded && instanceRef.current && (
           <>
@@ -83,7 +98,7 @@ const MyCarousel = (props) => {
           })}
         </Box>
       )}
-    </div>
+    </Box>
   )
 }
 
