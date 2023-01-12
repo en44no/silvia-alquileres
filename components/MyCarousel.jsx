@@ -66,9 +66,7 @@ const MyCarousel = (props) => {
           </iframe>
         )}
 
-
       </Box>
-
 
       {
         loaded && instanceRef.current && (

@@ -16,13 +16,14 @@ const PropertyDetails = (props) => {
     observations,
     googleMapsSrc,
     imagesSrc,
+    videosLinks,
     gastosIncluidos = false
   } = props;
 
   return (
     <>
       <Box display='flex' flexDirection={{ sm: 'column', md: 'column', lg: 'column', xl: 'row' }} ml={{ sm: '0', md: '0', lg: '0', xl: '-6rem' }} gap={{ sm: '0', md: '0', lg: '0', xl: '4rem' }}>
-        <MyCarousel imagesSrc={imagesSrc} />
+        <MyCarousel imagesSrc={imagesSrc} videosLinks={videosLinks} />
 
         <Box bg='#fff' border={{ sm: 'none', md: 'none', lg: 'none', xl: '2px solid #ebeff5' }} h='fit-content' borderRadius='20px'>
 
