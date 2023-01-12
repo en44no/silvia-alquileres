@@ -71,7 +71,7 @@ const MyCarousel = (props) => {
       <Box onClick={() => goToTop()} style={{ height: '100%' }} ref={sliderRef} className="keen-slider" minW={{ sm: 0, md: 600, lg: 600, xl: 600 }} maxW={{ sm: '100%', md: 600, lg: 600, xl: 600 }}>
 
         {imagesSrc.map((src, index = 1) =>
-          <Box key={src} className={`keen-slider__slide number-slide${index}`} style={{ maxWidth: '100%', minWidth: '100%' }}>
+          <Box key={src} className={`keen-slider__slide number-slide${index}`} style={{ minWidth: '100%' }}>
             <Image alt='Imágen de la casa' style={{ 'shadow': '0 4px 6px -1px rgba(0, 0, 0, 0.1),0 2px 4px -1px rgba(0, 0, 0, 0.06)' }} borderRadius='20px' src={src} />
           </Box>
         )}
