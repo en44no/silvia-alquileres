@@ -5,7 +5,7 @@ import { useKeenSlider } from 'keen-slider/react'
 
 const MyCarousel = (props) => {
   const { imagesSrc, videosLinks } = props;
-  const [scrollHeight, setScrollHeight] = useState(0);
+  const [scrollHeight, setScrollHeight] = React.useState(0);
 
   const [loading, setLoading] = React.useState(true);
 
