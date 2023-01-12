@@ -5,6 +5,8 @@ import { useKeenSlider } from 'keen-slider/react'
 
 const MyCarousel = (props) => {
   const { imagesSrc, videosLinks } = props;
+  const [scrollHeight, setScrollHeight] = useState(0);
+
   const [loading, setLoading] = React.useState(true);
 
   useEffect(() => {
@@ -12,6 +14,20 @@ const MyCarousel = (props) => {
       setLoading(false);
     }, 2000);
   })
+
+  const handleScroll = () => {
+    const position = window.pageYOffset;
+
+    setScrollHeight(position);
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+  }, [scrollHeight]);
+
+  const goToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   const [currentSlide, setCurrentSlide] = React.useState(0)
   const [loaded, setLoaded] = React.useState(false)
@@ -52,7 +68,7 @@ const MyCarousel = (props) => {
   return (
     <Box className="navigation-wrapper" border='2px solid #ebeff5' borderRadius='20px'>
 
-      <Box style={{ height: '100%' }} ref={sliderRef} className="keen-slider" minW={{ sm: 0, md: 600, lg: 600, xl: 600 }} maxW={{ sm: '100%', md: 600, lg: 600, xl: 600 }}>
+      <Box onClick={() => goToTop()} style={{ height: '100%' }} ref={sliderRef} className="keen-slider" minW={{ sm: 0, md: 600, lg: 600, xl: 600 }} maxW={{ sm: '100%', md: 600, lg: 600, xl: 600 }}>
 
         {imagesSrc.map((src, index = 1) =>
           <Box key={src} className={`keen-slider__slide number-slide${index}`} style={{ maxWidth: '100%', minWidth: '100%' }}>
