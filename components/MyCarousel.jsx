@@ -76,7 +76,7 @@ const MyCarousel = (props) => {
             <Arrow
               left
               onClick={(e) => {
-                goToTop(); e.stopPropagation() || instanceRef.current?.prev()
+                e.stopPropagation() || instanceRef.current?.prev()
               }
               }
               disabled={currentSlide === 0}
@@ -84,7 +84,7 @@ const MyCarousel = (props) => {
 
             <Arrow
               onClick={(e) => {
-                goToTop(); e.stopPropagation() || instanceRef.current?.next()
+                e.stopPropagation() || instanceRef.current?.next()
               }
               }
               disabled={
