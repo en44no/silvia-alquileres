@@ -28,7 +28,7 @@ const MyCarousel = (props) => {
   const goToTop = () => {
     setTimeout(() => {
       window.scrollTo({ top: 1, behavior: 'smooth' });
-    }, 200);
+    }, 1000);
   };
 
   const [currentSlide, setCurrentSlide] = React.useState(0)
