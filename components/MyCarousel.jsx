@@ -4,7 +4,7 @@ import 'keen-slider/keen-slider.min.css'
 import { useKeenSlider } from 'keen-slider/react'
 
 const MyCarousel = (props) => {
-  const { imagesSrc } = props;
+  const { imagesSrc, videosLinks } = props;
   const [loading, setLoading] = React.useState(true);
 
   useEffect(() => {
@@ -12,7 +12,6 @@ const MyCarousel = (props) => {
       setLoading(false);
     }, 2000);
   })
-
 
   const [currentSlide, setCurrentSlide] = React.useState(0)
   const [loaded, setLoaded] = React.useState(false)
@@ -30,13 +29,11 @@ const MyCarousel = (props) => {
     },
   })
 
-
-
   function Arrow(props) {
     const disabeld = props.disabled ? " arrow--disabled" : ""
     return (
       <svg
-        onClick={!loading && props.onClick}
+        onClick={props.onClick}
         className={`arrow ${props.left ? "arrow--left" : "arrow--right"
           } ${disabeld}`}
         xmlns="http://www.w3.org/2000/svg"
@@ -55,7 +52,7 @@ const MyCarousel = (props) => {
   return (
     <Box className="navigation-wrapper" border='2px solid #ebeff5' borderRadius='20px'>
 
-      <Box style={{ height: '100%' }} ref={sliderRef} className="keen-slider" minW={{ sm: '100%', md: 600, lg: 600, xl: 600 }} maxW={{ sm: '100%', md: 600, lg: 600, xl: 600 }}>
+      <Box style={{ height: '100%' }} ref={sliderRef} className="keen-slider" minW={{ sm: 0, md: 600, lg: 600, xl: 600 }} maxW={{ sm: '100%', md: 600, lg: 600, xl: 600 }}>
 
         {imagesSrc.map((src, index = 1) =>
           <Box key={src} className={`keen-slider__slide number-slide${index}`} style={{ maxWidth: '100%', minWidth: '100%' }}>
@@ -63,9 +60,11 @@ const MyCarousel = (props) => {
           </Box>
         )}
 
-        <iframe width="100" height="100" className={`keen-slider__slide number-slide99`} style={{ maxWidth: '100%', minWidth: '100%' }}
-          src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&mute=1">
-        </iframe>
+        {videosLinks?.map((src, index = 100) =>
+          <iframe width="100" height="100" className={`keen-slider__slide number-slide${index}`} style={{ maxWidth: '100%', minWidth: '100%' }}
+            src={src}>
+          </iframe>
+        )}
 
 
       </Box>
@@ -94,7 +93,7 @@ const MyCarousel = (props) => {
           </>
         )
       }
-      {loaded && !loading && instanceRef.current && (
+      {loaded && instanceRef.current && (
         <Box display={{
           sm: "none",
           md: "none",
