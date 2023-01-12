@@ -68,7 +68,7 @@ const MyCarousel = (props) => {
   return (
     <Box className="navigation-wrapper" border='2px solid #ebeff5' borderRadius='20px'>
 
-      <Box onClick={() => goToTop()} style={{ height: '100%' }} ref={sliderRef} className="keen-slider" minW={{ sm: 0, md: 600, lg: 600, xl: 600 }} maxW={{ sm: '100%', md: 600, lg: 600, xl: 600 }}>
+      <Box style={{ height: '100%' }} ref={sliderRef} className="keen-slider" minW={{ sm: 0, md: 600, lg: 600, xl: 600 }} maxW={{ sm: '100%', md: 600, lg: 600, xl: 600 }}>
 
         {imagesSrc.map((src, index = 1) =>
           <Box key={src} className={`keen-slider__slide number-slide${index}`} style={{ minWidth: '100%' }}>
@@ -90,15 +90,17 @@ const MyCarousel = (props) => {
           <>
             <Arrow
               left
-              onClick={(e) =>
-                e.stopPropagation() || instanceRef.current?.prev()
+              onClick={(e) => {
+                goToTop(); e.stopPropagation() || instanceRef.current?.prev()
+              }
               }
               disabled={currentSlide === 0}
             />
 
             <Arrow
-              onClick={(e) =>
-                e.stopPropagation() || instanceRef.current?.next()
+              onClick={(e) => {
+                goToTop(); e.stopPropagation() || instanceRef.current?.next()
+              }
               }
               disabled={
                 currentSlide ===
@@ -122,7 +124,7 @@ const MyCarousel = (props) => {
               <button
                 key={idx}
                 onClick={() => {
-                  instanceRef.current?.moveToIdx(idx)
+                  instanceRef.current?.moveToIdx(idx); goToTop()
                 }}
                 className={"dot" + (currentSlide === idx ? " active" : "")}
               ></button>
