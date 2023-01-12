@@ -2,7 +2,6 @@ import { Box, Image } from '@chakra-ui/react';
 import React, { useEffect } from 'react'
 import 'keen-slider/keen-slider.min.css'
 import { useKeenSlider } from 'keen-slider/react'
-import Loader from './Loader';
 
 const MyCarousel = (props) => {
   const { imagesSrc } = props;
@@ -31,13 +30,32 @@ const MyCarousel = (props) => {
     },
   })
 
+
+
+  function Arrow(props) {
+    const disabeld = props.disabled ? " arrow--disabled" : ""
+    return (
+      <svg
+        onClick={!loading && props.onClick}
+        className={`arrow ${props.left ? "arrow--left" : "arrow--right"
+          } ${disabeld}`}
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+      >
+        {props.left && (
+          <path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z" />
+        )}
+        {!props.left && (
+          <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" />
+        )}
+      </svg>
+    )
+  }
+
   return (
     <Box className="navigation-wrapper" border='2px solid #ebeff5' borderRadius='20px'>
-      <Box style={{ 'display': loading ? 'initial' : 'none' }}>
-        <Loader />
-      </Box>
 
-      <Box style={{ 'visibility': loading ? 'hidden' : 'initial', height: '100%' }} ref={sliderRef} className="keen-slider" minW={{ sm: '100%', md: 600, lg: 600, xl: 600 }} maxW={{ sm: '100%', md: 600, lg: 600, xl: 600 }}>
+      <Box style={{ height: '100%' }} ref={sliderRef} className="keen-slider" minW={{ sm: '100%', md: 600, lg: 600, xl: 600 }} maxW={{ sm: '100%', md: 600, lg: 600, xl: 600 }}>
 
         {imagesSrc.map((src, index = 1) =>
           <Box key={src} className={`keen-slider__slide number-slide${index}`} style={{ maxWidth: '100%', minWidth: '100%' }}>
@@ -76,7 +94,7 @@ const MyCarousel = (props) => {
           </>
         )
       }
-      {loaded && instanceRef.current && (
+      {loaded && !loading && instanceRef.current && (
         <Box display={{
           sm: "none",
           md: "none",
@@ -99,26 +117,6 @@ const MyCarousel = (props) => {
         </Box>
       )}
     </Box>
-  )
-}
-
-function Arrow(props) {
-  const disabeld = props.disabled ? " arrow--disabled" : ""
-  return (
-    <svg
-      onClick={props.onClick}
-      className={`arrow ${props.left ? "arrow--left" : "arrow--right"
-        } ${disabeld}`}
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-    >
-      {props.left && (
-        <path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z" />
-      )}
-      {!props.left && (
-        <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" />
-      )}
-    </svg>
   )
 }
 
