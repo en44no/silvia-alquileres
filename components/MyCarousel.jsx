@@ -1,5 +1,5 @@
 import { Box, Image } from '@chakra-ui/react';
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import 'keen-slider/keen-slider.min.css'
 import { useKeenSlider } from 'keen-slider/react'
 
@@ -27,8 +27,9 @@ const MyCarousel = (props) => {
     },
     created() {
       setLoaded(true)
-    },
-  })
+    }
+  },
+    [MyCarousel])
 
   function Arrow(props) {
     const disabeld = props.disabled ? " arrow--disabled" : ""
