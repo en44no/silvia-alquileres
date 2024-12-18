@@ -14,6 +14,7 @@ import {
   TelegramIcon
 } from "react-share";
 import { FaShare } from 'react-icons/fa';
+import Head from 'next/head';
 
 const PropertyDetails = (props) => {
 
@@ -39,6 +40,20 @@ const PropertyDetails = (props) => {
 
   return (
     <>
+      <Head>
+        <title>{name} - Silvia Alquileres</title>
+        <meta name="description" content={description} />
+        <meta property="og:title" content={`${name} - Silvia Alquileres`} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content={imagesSrc[0]} />
+        <meta property="og:url" content={currentUrl} />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={`${name} - Silvia Alquileres`} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content={imagesSrc[0]} />
+      </Head>
+
       <Box display='flex' flexDirection={{ sm: 'column', md: 'column', lg: 'column', xl: 'row' }} ml={{ sm: '0', md: '0', lg: '0', xl: '-6rem' }} gap={{ sm: '0', md: '0', lg: '0', xl: '4rem' }}>
         <MyCarousel imagesSrc={imagesSrc} videosLinks={videosLinks} />
 
