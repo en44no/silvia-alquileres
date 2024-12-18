@@ -41,14 +41,16 @@ export default function PaymentMethods() {
 
       <Box w='100%' display='flex' flexDirection='column'>
         <Box display='flex' justifyContent='space-between' alignItems='center'>
-          <Text fontWeight='semibold' fontSize='1rem'>Número de cuenta (BROU) pesos</Text>
+          <Text maxW={{ sm: '50%', md: '50%', lg: '100%' }} fontWeight='semibold' fontSize='1rem'>Número de cuenta (BROU) pesos</Text>
           <Text display='flex' alignItems='center' gap='0.5rem' fontWeight='semibold' fontSize='1rem'>
             {brouPesosAccountNumber} <FaCopy style={{ 'cursor': 'pointer' }} onClick={() => copyToClipboard(brouPesosAccountNumber)} />
           </Text>
         </Box>
 
+        <Divider bg='#dee5f0' h='0.07rem' my='0.5rem' />
+
         <Box display='flex' justifyContent='space-between' alignItems='center'>
-          <Text fontWeight='semibold' fontSize='1rem'>Número de cuenta anterior (BROU) pesos</Text>
+          <Text maxW={{ sm: '50%', md: '50%', lg: '100%' }} fontWeight='semibold' fontSize='1rem'>Número de cuenta anterior (BROU) pesos</Text>
           <Text display='flex' alignItems='center' gap='0.5rem' fontWeight='semibold' fontSize='1rem'>
             {brouOldAccountNumber} <FaCopy style={{ 'cursor': 'pointer' }} onClick={() => copyToClipboard(brouOldAccountNumber)} />
           </Text>
