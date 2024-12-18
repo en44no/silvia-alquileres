@@ -18,9 +18,14 @@ const MyCarousel = (props) => {
   const [loaded, setLoaded] = useState(false);
   const [sliderRef, instanceRef] = useKeenSlider({
     loop: false,
-    mode: "snap",
+    mode: "free-snap",
     rtl: false,
-    slides: { perView: "auto" },
+    slides: { perView: 1, spacing: 0 },
+    breakpoints: {
+      "(min-width: 600px)": {
+        slides: { perView: 1 },
+      },
+    },
     initial: 0,
     slideChanged(slider) {
       setCurrentSlide(slider.track.details.rel);
