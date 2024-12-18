@@ -44,7 +44,7 @@ const PropertyCard = (props) => {
 
         <Divider />
 
-        <Box display='flex' alignItems='center' gap='0.5rem'>
+        <Box display='flex' alignItems='center' gap='0.5rem' my='0.5rem'>
           <Text><MdLocationOn style={{ 'width': '1.2rem', 'fontSize': '1.2rem', 'color': '#808080' }} /></Text>
           <Text fontSize='md' fontWeight='medium' color='#808080' lineHeight='normal'>{address}</Text>
         </Box>
