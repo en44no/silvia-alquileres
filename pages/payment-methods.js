@@ -20,8 +20,8 @@ export default function PaymentMethods() {
     navigator.clipboard.writeText(text);
   }
 
-  let brouPesosAccountNumber = 999999;
-  let brouDollarsAccountNumber = 999999;
+  let brouPesosAccountNumber = '000961308-00001';
+  let brouOldAccountNumber = '023-0298913';
 
   return (
     <PageLayout title='Métodos de pago' centerChildren={false} showGoBack={true}>
@@ -39,15 +39,19 @@ export default function PaymentMethods() {
         <Divider bg='#dee5f0' h='0.07rem' />
       </Flex>
 
-      <Box w='100%'>
-        <Box display='flex' flexDirection='column' alignItems='center'>
-          <Box display='flex' w='fit-content' gap='0.5rem'>
-            <Text display='flex' alignItems='center' gap='0.5rem' fontWeight='semibold' fontSize='1rem'>Brou pesos - {brouPesosAccountNumber} <FaCopy style={{ 'cursor': 'pointer' }} onClick={() => copyToClipboard(brouPesosAccountNumber)} /></Text>
-          </Box>
+      <Box w='100%' display='flex' flexDirection='column'>
+        <Box display='flex' justifyContent='space-between' alignItems='center'>
+          <Text fontWeight='semibold' fontSize='1rem'>Número de cuenta (BROU) pesos</Text>
+          <Text display='flex' alignItems='center' gap='0.5rem' fontWeight='semibold' fontSize='1rem'>
+            {brouPesosAccountNumber} <FaCopy style={{ 'cursor': 'pointer' }} onClick={() => copyToClipboard(brouPesosAccountNumber)} />
+          </Text>
+        </Box>
 
-          <Box display='flex' w='fit-content' gap='0.5rem'>
-            <Text display='flex' alignItems='center' gap='0.5rem' fontWeight='semibold' fontSize='1rem'>Brou dólares - {brouDollarsAccountNumber} <FaCopy style={{ 'cursor': 'pointer' }} onClick={() => copyToClipboard(brouDollarsAccountNumber)} /></Text>
-          </Box>
+        <Box display='flex' justifyContent='space-between' alignItems='center'>
+          <Text fontWeight='semibold' fontSize='1rem'>Número de cuenta anterior (BROU) pesos</Text>
+          <Text display='flex' alignItems='center' gap='0.5rem' fontWeight='semibold' fontSize='1rem'>
+            {brouOldAccountNumber} <FaCopy style={{ 'cursor': 'pointer' }} onClick={() => copyToClipboard(brouOldAccountNumber)} />
+          </Text>
         </Box>
       </Box>
 
@@ -56,6 +60,12 @@ export default function PaymentMethods() {
         <Text padding='3' textAlign='center' minW='fit-content' fontSize='xl' fontWeight='bold'>Depósito Abitab y RedPagos</Text>
         <Divider bg='#dee5f0' h='0.07rem' />
       </Flex>
+
+      <Box>
+        <Text fontWeight='semibold' fontSize='1rem'>Se puede realizar depósito por redes de cobranza. </Text>
+        <Text fontWeight='semibold' fontSize='1rem'>Tenga en cuenta que le solicitarán los números de cuenta que se detallan en la sección de arriba.</Text>
+      </Box>
+
     </PageLayout>
   )
 }
