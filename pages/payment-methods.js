@@ -42,7 +42,7 @@ export default function PaymentMethods() {
       <Box w='100%' display='flex' flexDirection='column'>
         <Box display='flex' justifyContent='space-between' alignItems='center'>
           <Text maxW={{ sm: '50%', md: '50%', lg: '100%' }} fontWeight='semibold' fontSize='1rem'>Número de cuenta (BROU) pesos</Text>
-          <Text display='flex' alignItems='center' gap='0.5rem' fontWeight='semibold' fontSize='1rem'>
+          <Text display='flex' alignItems='center' gap='0.5rem' fontWeight='semibold' fontSize='1rem' style={{ WebkitTouchCallout: 'none', WebkitUserSelect: 'none', KhtmlUserSelect: 'none', MozUserSelect: 'none', MsUserSelect: 'none', UserSelect: 'none' }}>
             {brouPesosAccountNumber} <FaCopy style={{ 'cursor': 'pointer' }} onClick={() => copyToClipboard(brouPesosAccountNumber)} />
           </Text>
         </Box>
@@ -51,7 +51,7 @@ export default function PaymentMethods() {
 
         <Box display='flex' justifyContent='space-between' alignItems='center'>
           <Text maxW={{ sm: '50%', md: '50%', lg: '100%' }} fontWeight='semibold' fontSize='1rem'>Número de cuenta anterior (BROU) pesos</Text>
-          <Text display='flex' alignItems='center' gap='0.5rem' fontWeight='semibold' fontSize='1rem'>
+          <Text display='flex' alignItems='center' gap='0.5rem' fontWeight='semibold' fontSize='1rem' style={{ WebkitTouchCallout: 'none', WebkitUserSelect: 'none', KhtmlUserSelect: 'none', MozUserSelect: 'none', MsUserSelect: 'none', UserSelect: 'none' }}>
             {brouOldAccountNumber} <FaCopy style={{ 'cursor': 'pointer' }} onClick={() => copyToClipboard(brouOldAccountNumber)} />
           </Text>
         </Box>
