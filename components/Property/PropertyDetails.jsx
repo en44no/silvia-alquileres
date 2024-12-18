@@ -77,7 +77,7 @@ const PropertyDetails = (props) => {
             <Text fontSize='sm' fontWeight='semibold' pb='0.5rem' color='#808080'>*Consultar por descuentos al reservar varios días.</Text>
 
             <Box
-              p='0 1rem 1rem 1rem'
+              p={{ sm: '0.5rem 0 1rem 0', lg: '0 1rem 1rem 1rem' }}
               m='0'
               w='100%'
               justify='space-between'
