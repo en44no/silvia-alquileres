@@ -3,6 +3,19 @@ import React, { useEffect, useState } from 'react';
 import 'keen-slider/keen-slider.min.css';
 import { useKeenSlider } from 'keen-slider/react';
 
+const ResizePlugin = (slider) => {
+  const observer = new ResizeObserver(function () {
+    slider.update();
+  });
+
+  slider.on('created', () => {
+    observer.observe(slider.container);
+  });
+  slider.on('destroyed', () => {
+    observer.unobserve(slider.container);
+  });
+};
+
 const MyCarousel = (props) => {
   const { imagesSrc, videosLinks } = props;
 
@@ -16,19 +29,22 @@ const MyCarousel = (props) => {
 
   const [currentSlide, setCurrentSlide] = useState(0);
   const [loaded, setLoaded] = useState(false);
-  const [sliderRef, instanceRef] = useKeenSlider({
-    loop: false,
-    mode: "snap",
-    rtl: false,
-    slides: { perView: "auto" },
-    initial: 0,
-    slideChanged(slider) {
-      setCurrentSlide(slider.track.details.rel);
+  const [sliderRef, instanceRef] = useKeenSlider(
+    {
+      loop: false,
+      mode: 'snap',
+      rtl: false,
+      slides: { perView: 'auto' },
+      initial: 0,
+      slideChanged(slider) {
+        setCurrentSlide(slider.track.details.rel);
+      },
+      created() {
+        setLoaded(true);
+      },
     },
-    created() {
-      setLoaded(true);
-    }
-  });
+    [ResizePlugin]
+  );
 
   function Arrow(props) {
     const disabled = props.disabled ? " arrow--disabled" : "";
