@@ -1,10 +1,27 @@
-import React from 'react'
-import { Box, Button, Divider, Flex, Text } from "@chakra-ui/react";
+import React, { useEffect, useState } from 'react';
+import { Box, Button, Divider, Flex, Text, Menu, MenuButton, MenuList, MenuItem } from "@chakra-ui/react";
 import MyCarousel from "../../components/MyCarousel";
 import { BsWhatsapp } from "react-icons/bs";
 import GoogleMap from '../GoogleMap';
+import {
+  FacebookShareButton,
+  TwitterShareButton,
+  WhatsappShareButton,
+  TelegramShareButton,
+  WhatsappIcon,
+  FacebookIcon,
+  TwitterIcon,
+  TelegramIcon
+} from "react-share";
+import { FaShare } from 'react-icons/fa';
 
 const PropertyDetails = (props) => {
+
+  const [currentUrl, setCurrentUrl] = useState('');
+
+  useEffect(() => {
+    setCurrentUrl(window.location.href);
+  }, []);
 
   const {
     price,
@@ -50,10 +67,122 @@ const PropertyDetails = (props) => {
               w='100%'
               justify='space-between'
               flexWrap='wrap'
+              display='flex'
+              gap='0.5rem'
             >
-              <Button onClick={() => window.open(`https://api.whatsapp.com/send/?phone=59895579099&text=%C2%A1Hola!+Estoy+interesado+en+alquilar+tu+propiedad+de+${simpleLocation}. ¿Podrías+decirme+en+qué+fecha+está+disponible?+Muchas gracias.`, '_ blank')} bg='#394e6a' color='#fff' _hover={{ 'bgColor': '#668dbf' }} w='100%' variant='ghost' borderRadius='18px' leftIcon={<BsWhatsapp />}>
+
+              <Button
+                onClick={() => window.open(`https://api.whatsapp.com/send/?phone=59895579099&text=%C2%A1Hola!+Estoy+interesado+en+alquilar+tu+propiedad+de+${simpleLocation}. ¿Podrías+decirme+en+qué+fecha+está+disponible?+Muchas gracias.`, '_blank')}
+                bg='#394e6a'
+                color='#fff'
+                _hover={{ bgColor: '#668dbf' }}
+                _active={{ bgColor: '#394e6a' }}
+                w='100%'
+                variant='ghost'
+                borderRadius='18px'
+                leftIcon={<BsWhatsapp />}
+              >
                 Consultar
               </Button>
+
+              <Menu placement='bottom-end'>
+                <MenuButton
+                  as={Button}
+                  bg='#f0f6ff'
+                  color='#394e6a'
+                  _hover={{ bgColor: '#dce1e9' }}
+                  _active={{ bgColor: '#f0f6ff' }}
+                  w='100%'
+                  variant='ghost'
+                  borderRadius='18px'
+                  display='flex'
+                  justifyContent='center'
+                  alignItems='center'
+                >
+                  <Box display='flex' justifyContent='center' alignItems='center'>
+                    <Box as={FaShare} mr={2} />
+                    Compartir
+                  </Box>
+                </MenuButton>
+                <MenuList minW='0' bg='white' boxShadow='lg' p={2} display='flex' flexDirection='row' justifyContent='end' gap={2} placement="bottom-end">
+                  <MenuItem as='div' bg='white' p={0} w='auto'>
+                    <FacebookShareButton
+                      url={currentUrl}
+                      title={`¡Mira esta propiedad en Silvia Alquileres!`}
+                      hashtag="#SilviaAlquileres"
+                    >
+                      <Box
+                        as={FacebookIcon}
+                        size={32}
+                        round
+                        sx={{
+                          transition: 'transform 0.2s',
+                          '&:hover': {
+                            transform: 'scale(1.1)',
+                          },
+                        }}
+                      />
+                    </FacebookShareButton>
+                  </MenuItem>
+                  <MenuItem as='div' bg='white' p={0} w='auto'>
+                    <TwitterShareButton
+                      url={currentUrl}
+                      title={`¡Mira esta propiedad en Silvia Alquileres!`}
+                      hashtags={['SilviaAlquileres']}
+                    >
+                      <Box
+                        as={TwitterIcon}
+                        size={32}
+                        round
+                        sx={{
+                          transition: 'transform 0.2s',
+                          '&:hover': {
+                            transform: 'scale(1.1)',
+                          },
+                        }}
+                      />
+                    </TwitterShareButton>
+                  </MenuItem>
+                  <MenuItem as='div' bg='white' p={0} w='auto'>
+                    <TelegramShareButton
+                      url={currentUrl}
+                      title={`¡Mira esta propiedad en Silvia Alquileres!`}
+                    >
+                      <Box
+                        as={TelegramIcon}
+                        size={32}
+                        round
+                        sx={{
+                          transition: 'transform 0.2s',
+                          '&:hover': {
+                            transform: 'scale(1.1)',
+                          },
+                        }}
+                      />
+                    </TelegramShareButton>
+                  </MenuItem>
+                  <MenuItem as='div' bg='white' p={0} w='auto'>
+                    <WhatsappShareButton
+                      url={currentUrl}
+                      title={`¡Mira esta propiedad en Silvia Alquileres!`}
+                      separator=" - "
+                    >
+                      <Box
+                        as={WhatsappIcon}
+                        size={32}
+                        round
+                        sx={{
+                          transition: 'transform 0.2s',
+                          '&:hover': {
+                            transform: 'scale(1.1)',
+                          },
+                        }}
+                      />
+                    </WhatsappShareButton>
+                  </MenuItem>
+
+                </MenuList>
+              </Menu>
             </Box>
 
           </Box>
@@ -67,7 +196,7 @@ const PropertyDetails = (props) => {
         }}>
           <GoogleMap src={googleMapsSrc} width='100%' />
         </Box>
-      </Box>
+      </Box >
 
       <Flex align="center" w='100%'>
         <Divider bg='#dee5f0' h='0.07rem' />
@@ -88,16 +217,16 @@ const PropertyDetails = (props) => {
       <Box display='flex' flexDirection={{ sm: 'column', md: 'row' }} w={{ sm: '100%', md: '100%' }} gap={{ sm: '0', md: '0', lg: '5rem' }} alignItems={{ sm: 'left', md: 'normal' }} justifyContent={{ sm: 'space-between', md: 'space-between', lg: 'center' }} mb='0.5rem'>
 
         <Box w={{ sm: '100%', md: '100%', lg: 'fit-content' }}>
-          {featuresLeftSide && featuresLeftSide.map((feature) => (
-            <Box display='flex' alignItems={{ sm: 'left', md: 'center' }} w='fit-content' gap='0.5rem'>
+          {featuresLeftSide && featuresLeftSide.map((feature, index) => (
+            <Box key={index} display='flex' alignItems={{ sm: 'left', md: 'center' }} w='fit-content' gap='0.5rem'>
               <Text fontWeight='semibold' fontSize='1rem'>• {feature}</Text>
             </Box>
           ))}
         </Box>
 
         <Box w={{ sm: '100%', md: '100%', lg: 'fit-content' }}>
-          {featuresRightSide && featuresRightSide.map((feature) => (
-            <Box display='flex' alignItems={{ sm: 'left', md: 'center' }} w='fit-content' gap='0.5rem'>
+          {featuresRightSide && featuresRightSide.map((feature, index) => (
+            <Box key={index} display='flex' alignItems={{ sm: 'left', md: 'center' }} w='fit-content' gap='0.5rem'>
               <Text fontWeight='semibold' fontSize='1rem'>• {feature}</Text>
             </Box>
           ))}
@@ -114,8 +243,8 @@ const PropertyDetails = (props) => {
 
         <Box display='flex' flexDirection='column' alignItems={{ sm: 'left', md: 'center' }}>
 
-          {observations && observations.map((observation) => (
-            <Box display='flex' w='fit-content' gap='0.5rem'>
+          {observations && observations.map((observation, index) => (
+            <Box key={index} display='flex' w='fit-content' gap='0.5rem'>
               <Text textAlign='left' fontWeight='semibold' fontSize='1rem'>{observation}</Text>
             </Box>
           ))}
@@ -127,4 +256,4 @@ const PropertyDetails = (props) => {
   )
 }
 
-export default PropertyDetails
+export default PropertyDetails;
