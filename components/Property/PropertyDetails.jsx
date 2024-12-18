@@ -42,7 +42,7 @@ const PropertyDetails = (props) => {
             {gastosIncluidos && (
               <Text fontSize='sm' fontWeight='semibold' color='#808080'>*Gastos incluídos.</Text>
             )}
-            <Text fontSize='sm' fontWeight='semibold' pb='0.5rem' color='#808080'>*Consultar por descuentos al pedir varios días.</Text>
+            <Text fontSize='sm' fontWeight='semibold' pb='0.5rem' color='#808080'>*Consultar por descuentos al reservar varios días.</Text>
 
             <Box
               p='0 1rem 1rem 1rem'
@@ -68,8 +68,6 @@ const PropertyDetails = (props) => {
           <GoogleMap src={googleMapsSrc} width='100%' />
         </Box>
       </Box>
-
-
 
       <Flex align="center" w='100%'>
         <Divider bg='#dee5f0' h='0.07rem' />

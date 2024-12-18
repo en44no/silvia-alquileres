@@ -6,7 +6,7 @@ export default function Property() {
     <PageLayout title='Apartamento en Piriápolis' showGoBack={true}>
 
       <PropertyDetails
-        price='2200'
+        price='2500'
         name='Apartamento en Piriápolis'
         simpleLocation='Piriápolis'
         description='Casa para dos personas ubicada en la ciudad de Piriápolis, en las calles Misiones y Piria (1113), a una cuadra del Hipercentro Devoto, a 6 de la playa y 4 de la terminal.'
