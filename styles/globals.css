@@ -197,18 +197,19 @@ a {
   outline: none !important;
 }
 
-.keen-slider__slide {
-  min-width: 100% !important;
-  max-width: 100% !important;
-  flex: 0 0 100%;
+.navigation-wrapper {
+  overflow: hidden;
+  position: relative;
 }
 
 .keen-slider {
+  display: flex;
+  flex-wrap: nowrap;
   overflow: hidden;
 }
 
-.keen-slider__slide img {
+.keen-slider__slide {
+  flex: 0 0 auto;
   width: 100%;
-  height: auto;
-  object-fit: cover;
+  transition: transform 0.3s ease;
 }
