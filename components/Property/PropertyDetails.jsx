@@ -74,7 +74,7 @@ const PropertyDetails = (props) => {
             {gastosIncluidos && (
               <Text fontSize='sm' fontWeight='semibold' color='#808080'>*Gastos incluídos.</Text>
             )}
-            <Text fontSize='sm' fontWeight='semibold' pb='0.5rem' color='#808080'>*Consultar por descuentos al reservar varios días.</Text>
+            {/* <Text fontSize='sm' fontWeight='semibold' pb='0.5rem' color='#808080'>*Consultar por descuentos al reservar varios días.</Text> */}
 
             <Box
               p={{ sm: '0.5rem 0 1rem 0', lg: '0 1rem 1rem 1rem' }}
